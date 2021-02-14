@@ -38,4 +38,23 @@ var template = React.createElement(
 * Functional logic like conditionals should not be done in a JS expression, it should be extracted into a separate function then called within the expression
 
 * JSX ignores values like true/false/null, nothing gets rendered
+
   - This can be very helpful for ternary operators and conditional rendering: If we say true && something.... it will render whatever is after the && BUT if we say false and something..... it will return false! E.g. nothing will be rendered!
+
+* Some HTML keywords, like class, are reserved keywords in JS so needed to be changed (this is why we use className)
+
+  - See HTML elements in React docs for more info
+
+* We can use a JS expression to set an id, className, onClick, etc. (this is helpful for event listeners when we need to run a function)
+
+  - See Synthetic Events React docs for possible events
+
+* JSX doesn't have builtin data binding! This is why we need a useState hook to force a render when the state is updated
+
+  - On initial render it just processes the code as it stands when it gets to ReactDOM.render (e.g. if count is 0, that is what will be rendered and that is how it will stay regardless of what happens when our function runs because we aren't telling it to render again unless we use a state hook)
+
+  * When we run render React calculates the minimum number of elements that actually need to be rendered and doesn't render anything else
+
+* When we render an array in JSX it is being broken into individual JS expressions, e.g. if we render {[99, 98, 97]} it will show as {99} {98} {97}
+  - We can also render an array including HTML tags such as {[<p>a</p>, <p>b</p>, <p>c</p>]} will render as a b c on new lines, however this will cause an error asking for a unique key prop -> This error means that react will render all of these elements at once because it has no way of differentiating them
+    - Fix this by adding keys to each element: {[<p key="1">a</p>, <p key="2">b</p>, <p key="3">c</p>]}
