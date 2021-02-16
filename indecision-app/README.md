@@ -58,3 +58,17 @@ var template = React.createElement(
 * When we render an array in JSX it is being broken into individual JS expressions, e.g. if we render {[99, 98, 97]} it will show as {99} {98} {97}
   - We can also render an array including HTML tags such as {[<p>a</p>, <p>b</p>, <p>c</p>]} will render as a b c on new lines, however this will cause an error asking for a unique key prop -> This error means that react will render all of these elements at once because it has no way of differentiating them
     - Fix this by adding keys to each element: {[<p key="1">a</p>, <p key="2">b</p>, <p key="3">c</p>]}
+
+## Classes
+
+- When we define a class we need to define a constructor for any data we want the class to store (e.g. if we want to pass in a name as a param, we need to define that in the constructor or the data will be lost)
+  - 'this' inside a class refers to the class itself, the constructor doesn't have its own scope (it borrows from the parent scope)
+  - If you choose to not pass in a param from the constructor when instantiating a class instance, that data will be undefined (e.g. it is not required to pass those pieces in but the data will be undefined)
+    - One way to avoid this is to assign a default value for any params in the constructor (e.g. name = 'Anonymous' will assign anonymous if a name isn't passed in when the class is instantiated)
+
+## React Components
+
+- We need to extend classes by React.Component to inherit all of the functionality of the React class, this will bring in all the methods and properties from React
+
+* React components are reusable and can be rendered as many times as needed
+* Using uppercase letters for components is important because it allows React to understand what we are trying to render (e.g. header will render as a string since it is an HTML element, so our component won't render. If we use Header React knows to reference the class we are rendering)
