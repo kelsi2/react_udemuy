@@ -72,3 +72,7 @@ var template = React.createElement(
 
 * React components are reusable and can be rendered as many times as needed
 * Using uppercase letters for components is important because it allows React to understand what we are trying to render (e.g. header will render as a string since it is an HTML element, so our component won't render. If we use Header React knows to reference the class we are rendering)
+* Event handlers are set up as class methods
+
+* Need to use bind to make sure this is using the correct context (e.g. our methods don't have access to the class context so this will cause an error unless we use bind)
+  - See constructor for Options class, we are overriding the constructor for React.Component and binding this to the method context
