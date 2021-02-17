@@ -76,3 +76,25 @@ var template = React.createElement(
 
 * Need to use bind to make sure this is using the correct context (e.g. our methods don't have access to the class context so this will cause an error unless we use bind)
   - See constructor for Options class, we are overriding the constructor for React.Component and binding this to the method context
+
+## Stateless Functional Components
+
+- Don't allow for state but really good for simple components (not necessary to use a class when we could use a function)
+  - Using functions make the app faster so it's good to use both in combination to simplify
+
+* Default props can be passed in, these will be used if no value is passed in
+  - This makes our components more flexible and allows props to be optional for pages that don't need that info
+
+## Lifecycle Methods
+
+- Only accessible in class methods, not functional components (this is part of why functions are faster)
+
+* componentDidMount will run when the component is first mounted to the DOM
+* componentDidUpdate will run whenever the component updates (state or props change)
+  - It is important to use conditionals to make sure there is actually data being changed (e.g. without any check if we click remove all the method will fire, even if the array is already empty)
+* componentWillUnmount runs when a component will go away (it hasn't gone away yet), not used often
+  - This will mainly be fired if we switch pages and render a new component
+* See React Component Lifecycle docs for more info
+* render and constructor are also lifecycle methods
+
+## WebPack
