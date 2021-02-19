@@ -1,0 +1,36 @@
+// What should I do button
+
+.big-button {
+  background: $purple;
+  border: none;
+  // darken is a built in scss function, pass in the color to be darkened and the percentage to darken by
+  border-bottom: 0.6rem solid darken($purple, 10%);
+  color: #fff;
+  font-weight: bold;
+  font-size: $l-size;
+  margin-bottom: $xl-size;
+  padding: 2.4rem;
+  width: 100%;
+}
+
+.big-button:disabled {
+  opacity: 0.5;
+}
+
+// Regular buttons
+.button {
+  background: $purple;
+  border: none;
+  border-bottom: 0.3rem solid darken($purple, 10%);
+  color: #fff;
+  font-weight: 500;
+  padding: $s-size;
+}
+
+// BEM modifier (defined with -- instead of __)
+.button--link {
+  background: none;
+  border: none;
+  color: $off-white;
+  padding: 0;
+}

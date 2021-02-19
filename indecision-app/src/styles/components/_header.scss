@@ -1,21 +1,22 @@
 .header {
-  background: #20222b;
+  background: $off-black;
   color: #fff;
-  margin-bottom: 4.8rem;
-  padding: 1.6rem 0;
+  margin-bottom: $xl-size;
+  padding: $m-size 0;
 }
 
 // BEM: Block Element Modifier naming convention
 // Block === header (the thing the elements live inside)
 // Element === individual piece inside the block (like an h1, p, etc.)
+// Modifier === defining a different version of the normal styles (see button.scss)
 .header__title {
-  font-size: 3.2rem;
+  font-size: $l-size;
   margin: 0;
 }
 
 .header__subtitle {
-  color: #a5afd7;
-  font-size: 1.6rem;
+  color: $off-white;
+  font-size: $m-size;
   font-weight: 500;
   margin: 0;
 }

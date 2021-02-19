@@ -164,3 +164,5 @@ ReactDOM.render(
 * rem is better for accessibility than px, allows users to customize font sizes on their end depending on preferences
   - 1 rem is 16px by default. To make rems easier to work with we can set html font-size to 62.5% which will make the default rem size 10px. The math is then much easier
   * Use 1.6rem on the body to make sure default font size balances out
+* With SCSS we can create a settings file for variables which can then be used by all other files (be sure to define this first in the import list)
+* SCSS has built in [functions](sass-lang.com/documentation/Sass/Script/Functions.html), we are using darken on the button
