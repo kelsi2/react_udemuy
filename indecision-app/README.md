@@ -98,3 +98,60 @@ var template = React.createElement(
 * render and constructor are also lifecycle methods
 
 ## WebPack
+
+- Webpack allows us to organize js in one file (it bundles everything including dependencies and application code, everything the code needs to run)
+  - This eliminates the need for a lot of script tags that slow down the site
+  - Files are broken into small islands that can communicate using import/export
+
+* With Webpack rather than having everything in the public folder and being rendered by index.html (react.js, react-dom.js, utils.js, app.js), our dependencies, code, and rendering are split into individual folders and files:
+  - node_modules/ contains dependencies react.js and react-dom.js
+  - src/ contains code to be rendered app.js and utils.js
+  - public/ contains bundle.js (dependencies and app code in one file) which is rendered by index.html (also in public folder)
+* Webpack can run babel for us
+* This allows us to break code into multiple smaller files so the code isn't as overwhelming
+
+* Webpack config files are node.js files
+  - This needs to be included for webpack to run, and must include an entry and output path
+* Imported files run first then the actual entry file
+
+  - We need to explicitly export functions from the file to use them elsewhere since each file has its own scope
+    - Can use a single default export or multiple named exports
+
+  * You can import only certain functions from a file, only pull in what you need
+  * If using named exports/imports the names need to be exactly the same
+  * Default imports need to be imported without curly braces
+  * Don't need to use the exact name for default exports, we can call it anything we want when importing
+  * Export default can't be used inline but we can instead just define an unnamed function (e.g. export default (a, b) => a - b)
+
+* Webpack loader is used to run the bundle through babel to compile jsx to js or scss to css (see module in webpack config)
+  - Without this we would have to use React.createElement calls in our js instead of just using render normally
+* Important to use a source map (defined with devtool in webpack config) so you know where errors are occurring instead of getting a random bundle reference
+
+* Using class properties from Babel we can define properties without needing a constructor first
+  - We also eliminate the need to bind this because we can now use functions (instead of methods) inside of classes. Functions have their own this binding (it is always bound to the class instance) so we don't need a constructor to bind this anymore
+
+## Using Third Party Components
+
+- We can pass in jsx as props.children:
+
+```js
+const Layout = (props) => {
+  return (
+    <div>
+      <p>header</p>
+      {props.children}
+      <p>footer</p>
+    </div>
+  );
+};
+
+ReactDOM.render(
+  <Layout>
+    <div>
+      <h1>Page Title</h1>
+      <p>This is my page</p>
+    </div>
+  </Layout>,
+  document.getElementById("app")
+);
+```
