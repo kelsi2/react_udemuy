@@ -155,3 +155,12 @@ ReactDOM.render(
   document.getElementById("app")
 );
 ```
+
+## Styling React
+
+- Using SCSS for styling, styles.scss will act similar to app.js, it is where we will import all the other styles files
+  - We are using partials to import which are denoted with an underscore before the name (it contains part of the styles, not the whole thing)
+
+* rem is better for accessibility than px, allows users to customize font sizes on their end depending on preferences
+  - 1 rem is 16px by default. To make rems easier to work with we can set html font-size to 62.5% which will make the default rem size 10px. The math is then much easier
+  * Use 1.6rem on the body to make sure default font size balances out
