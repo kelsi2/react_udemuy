@@ -32,3 +32,25 @@ Building a React e-commerce app.
   - Never change state or action directly, we only return an object with the new state
 * We can use combineReducers to create more than one reducer, this is what we need for expensify
 * In order to use spread syntax for objects we need to add support to babelrc as a plugin (transform-object-rest-spread)
+
+## Jest
+
+- Need to always have .test.js file extension for Jest to find test suite
+- Syntax is test('description of test', () => {code to be tested})
+
+* We want to run jest in watch mode, to run a script this way we need to enter yarn test -- --watch (without the extra -- yarn doesn't know --watch is referring to the script so it doesn't work)
+* If testing two objects or arrays use toEqual instead of toBe (objects and arrays can't be tested with ===, this will always return false)
+
+* Using react-test-renderer to test components. This allows us to create snapshots of the component to ensure it renders as expected rather than typing out mock data as we did for actions, reducers, and selectors
+
+  - If the output changes from the snapshot we will know (this test will always pass the first time when the snapshot is created)
+
+  * See the tests/components/**snapshots** folder (automatically generated) to see the test snapshots
+  * When we run the test again it will compare what is rendered with what is in the snapshot
+  * If we actually want to make changes to the code, we can press 'u' to ensure that the snapshot is updated to match
+
+* Switching over to Enzyme, relatively similar to react-test-renderer but with more features
+* Be sure to test components in isolation (e.g. for ExpenseList we need to make sure we test that component without testing ExpenseListItem)
+
+* ExpenseForm test gets more complicated. We are passing in a createdAt moment which will always be different causing the test to fail, so we need to mock that data to make the test pass
+  - See tests/**mocks** folder
