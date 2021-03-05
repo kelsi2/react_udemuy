@@ -69,3 +69,12 @@ Building a React e-commerce app.
   - Yarn.lock must be committed!! If it is ignored the deploy will not work
 
 * Can use git commit -am (add and message flags) to add modified files, this will not work for new files
+
+## Firebase
+
+- Must import as `import * as firebase from 'firebase'` which grabs all the named exports and includes them in a variable (object) known as firebase
+  - No default export available from firebase
+
+* .ref() is used to pass data to specific parts of the db (e.g. users, etc.). If no params we are sending data to the root of the db
+* .set() includes the data we want to pass to the db (can be any data type, object, string, etc.) -> If we run set more than once the original data will be overwritten!
+* Firebase doesn't support arrays, they are converted into object structures
