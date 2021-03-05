@@ -62,3 +62,7 @@ Building a React e-commerce app.
 - Git add: Add files to staging area
 - Git commit: Creates new commit with files from staging area
 - Git log: View recent commits
+
+## Deployment
+
+- Since this is a nested folder inside a repo (package.json is not at the top level) need to use a different command to run the build: `git subtree push --prefix expensify-app heroku master`
