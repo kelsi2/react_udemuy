@@ -66,3 +66,6 @@ Building a React e-commerce app.
 ## Deployment
 
 - Since this is a nested folder inside a repo (package.json is not at the top level) need to use a different command to run the build: `git subtree push --prefix expensify-app heroku master`
+  - Yarn.lock must be committed!! If it is ignored the deploy will not work
+
+* Can use git commit -a to add modified files, this will not work for new files
