@@ -54,3 +54,11 @@ Building a React e-commerce app.
 
 * ExpenseForm test gets more complicated. We are passing in a createdAt moment which will always be different causing the test to fail, so we need to mock that data to make the test pass
   - See tests/**mocks** folder
+
+## Git Commands
+
+- Git init: Create new Git repo
+- Git status: View changes to project code
+- Git add: Add files to staging area
+- Git commit: Creates new commit with files from staging area
+- Git log: View recent commits
