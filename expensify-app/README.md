@@ -78,3 +78,7 @@ Building a React e-commerce app.
 * .ref() is used to pass data to specific parts of the db (e.g. users, etc.). If no params we are sending data to the root of the db
 * .set() includes the data we want to pass to the db (can be any data type, object, string, etc.) -> If we run set more than once the original data will be overwritten!
 * Firebase doesn't support arrays, they are converted into object structures
+
+* Components should not be concerned about communicating with Firebase, they are only concerned with UI
+  - Firebase logic can be placed in actions/expenses, need to use redux-thunk middleware to add this functionality
+* Important to have a separate test db or changes while testing will affect prod db!
