@@ -16,7 +16,7 @@ exports[`should render ExpenseList with expenses 1`] = `
     description="Gum"
     id="1"
     key="1"
-    node=""
+    note=""
   />
   <ExpenseListItem
     amount={109500}
@@ -24,7 +24,7 @@ exports[`should render ExpenseList with expenses 1`] = `
     description="Rent"
     id="2"
     key="2"
-    node=""
+    note=""
   />
   <ExpenseListItem
     amount={4500}
@@ -32,7 +32,7 @@ exports[`should render ExpenseList with expenses 1`] = `
     description="Credit Card"
     id="3"
     key="3"
-    node=""
+    note=""
   />
 </div>
 `;
